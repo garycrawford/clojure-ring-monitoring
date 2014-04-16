@@ -21,7 +21,7 @@
 (defn- result->html [[check-name [status result]]]
   (list [:dt.check_name (name check-name)]
         [:dd.check_result (if (= status ::success)
-                            [:span.success "success"]
+                            [:span.success "success! Result: " (.toString result)]
                             [:span.failure (str "failed! Result: "
                                                 (.toString result))])]))
 
